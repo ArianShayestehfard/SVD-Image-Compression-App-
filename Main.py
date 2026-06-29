@@ -68,11 +68,3 @@ if file:
 
         compressed_size = len(buf.getvalue())
 
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Original Size", f"{original_size/1024:.1f} KB")
-        col2.metric("Compressed Size", f"{compressed_size/1024:.1f} KB")
-        col3.metric("Reduction", f"{(1 - compressed_size/original_size)*100:.1f}%")
-
-        st.download_button("Download Compressed Image", buf.getvalue(), "compressed.jpg")
-
-    st.divider()
